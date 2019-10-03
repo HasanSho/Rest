@@ -282,5 +282,5 @@ nav h1 a {
 }
 //---------------media quiry-------//
 @media screen and (max-width: 1000px) {
-	#restaurant-container, #reviews-container{width:45%;}
+	#restaurant-container, #reviews-container{width:42%;}
 }
