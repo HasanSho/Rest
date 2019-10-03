@@ -40,6 +40,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   min-height: 100%;
 }
 #footer {
+	width:100%;
   background-color: #444;
   color: #aaa;
   font-size: 8pt;
@@ -47,7 +48,6 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   padding: 25px;
   text-align: center;
   text-transform: uppercase;
-  width:100%;
 }
 /* ====================== Navigation ====================== */
 nav {
@@ -58,6 +58,7 @@ nav {
 }
 nav h1 {
   margin: auto;
+  padding-top: 26px;
 }
 nav h1 a {
   color: #fff;
@@ -67,12 +68,18 @@ nav h1 a {
   text-transform: uppercase;
 }
 #breadcrumb {
-    padding: 10px 40px 16px;
+    padding: 10px 10px 16px;
     list-style: none;
     background-color: #eee;
     font-size: 17px;
     margin: 0;
-    width: calc(50% - 80px);
+    width: 100%;
+}
+
+.breadcrumb{
+	width: 100%;
+    height: 80px;
+
 }
 
 /* Display list items side by side */
@@ -106,7 +113,7 @@ nav h1 a {
 }
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
-  width: 100%;
+  /*width: 100%;*/
   height: auto;
   background-color: #3397DB;
   align-items: center;
@@ -202,7 +209,7 @@ nav h1 a {
   height: 87%;
   position: fixed;
   right: 0;
-  top: 80px;
+  top: 125px;
   width: 50%;
 }
 .inside #map {
@@ -213,6 +220,7 @@ nav h1 a {
 .inside #footer {
   bottom: 0;
   position: absolute;
+      width: calc(50% - 50px);
 }
 #restaurant-name {
   color: #f18200;
@@ -270,17 +278,76 @@ nav h1 a {
   list-style-type: none;
   margin: 0 0 30px;
   overflow: hidden;
-  padding: 20px 20px 20px;
   position: relative;
   width: 85%;
+  border-radius: 5px;
+  box-shadow:4px 4px 10px 0px #a2a2a2;
 }
 #reviews-list li p {
-  margin: 0 0 10px;
+ margin: 0;
 }
 #restaurant-hours td {
   color: #666;
 }
-//---------------media quiry-------//
+
+.name{
+    background-color: black;
+    color: white;
+    padding: 10px 10px 0 10px;
+    font-size: 20px;
+}
+.date{
+background-color: black;
+    color: #a5a5a5;
+    padding: 10px;
+    font-size: 13px;
+}
+.rating{
+background-color: #2196F3;
+    color: #ffffff;
+    padding: 6px;
+    font-size: 16px;
+}
+.comments{
+padding: 19px;
+    font-size: 17px;
+}
+
+/*---------------media quiry-------*/
 @media screen and (max-width: 1070px) {
 	#restaurant-container, #reviews-container{width:42%;}
 }
+
+@media screen and (max-width: 800px) {
+  .inside #map-container {
+    position: relative!important;
+    height: 400px!important;
+    top: 130px!important;
+	width:90%!important;
+	}
+  .container {
+    width: 50%;
+  }
+  
+  #maincontent {
+    background-color: #f3f3f3;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+#restaurant-container, #reviews-container{
+	
+	width:76%;
+	
+}
+
+#breadcrumb {width:100%;
+}
+
+#footer {width: calc(100% - 50px)!important;
+
+}
+
+  }
