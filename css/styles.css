@@ -280,3 +280,7 @@ nav h1 a {
 #restaurant-hours td {
   color: #666;
 }
+//---------------media quiry-------//
+@media screen and (min-width: 1000px) {
+	#restaurant-container, #reviews-container{width:45%;}
+}
