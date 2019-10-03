@@ -9,7 +9,7 @@ self.addEventListener('install',function(event){
 	.then(function(cache){
 		
 		return cache.addAll([
-
+  './',
 				'./index.html',
 				'./restaurant.html',
 				'./css/styles.css',
