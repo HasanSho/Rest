@@ -40,7 +40,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   min-height: 100%;
 }
 #footer {
-	width:100%;
+	width:calc(100% - 50px);
   background-color: #444;
   color: #aaa;
   font-size: 8pt;
@@ -58,7 +58,7 @@ nav {
 }
 nav h1 {
   margin: auto;
-  padding-top: 26px;
+  padding-top: 13px;
 }
 nav h1 a {
   color: #fff;
@@ -113,7 +113,7 @@ nav h1 a {
 }
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
-  /*width: 100%;*/
+  width: calc(100% - 22px);
   height: auto;
   background-color: #3397DB;
   align-items: center;
@@ -254,11 +254,11 @@ nav h1 a {
 #restaurant-container, #reviews-container {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
-  padding: 140px 40px 30px;
+  padding: 140px 15px 30px;
   width: 47%;
 }
 #reviews-container {
-  padding: 30px 40px 80px;
+  padding: 30px 15px 80px;
 }
 #reviews-container h2 {
   color: #f58500;
@@ -325,6 +325,7 @@ padding: 19px;
     top: 130px!important;
 	width:90%!important;
 	}
+	#map{width: 96vw;}
   .container {
     width: 50%;
   }
