@@ -281,6 +281,6 @@ nav h1 a {
   color: #666;
 }
 //---------------media quiry-------//
-@media screen and (min-width: 1000px) {
+@media screen and (max-width: 1000px) {
 	#restaurant-container, #reviews-container{width:45%;}
 }
