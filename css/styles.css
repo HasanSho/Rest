@@ -333,7 +333,7 @@ padding: 19px;
   #maincontent {
     background-color: #f3f3f3;
     min-height: 100%;
-    display: flex;
+	margin-left:8px;
     flex-direction: column;
     align-items: center;
 }
