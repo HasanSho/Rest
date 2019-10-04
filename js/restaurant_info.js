@@ -71,6 +71,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
 
   const address = document.getElementById('restaurant-address');
   address.setAttribute('tabindex',0)
+  address.setAttribute('aria-label','restaurant-address')  
   address.innerHTML = restaurant.address;
 
   const image = document.getElementById('restaurant-img');
@@ -82,6 +83,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
 
   const cuisine = document.getElementById('restaurant-cuisine');
   cuisine.setAttribute('tabindex',0)
+  cuisine.setAttribute('aria-label','restaurant-cuisine')  
   cuisine.innerHTML = restaurant.cuisine_type;
 
   // fill operating hours
