@@ -66,17 +66,22 @@ fetchRestaurantFromURL = (callback) => {
  */
 fillRestaurantHTML = (restaurant = self.restaurant) => {
   const name = document.getElementById('restaurant-name');
+  name.setAttribute('tabindex',0)
   name.innerHTML = restaurant.name;
 
   const address = document.getElementById('restaurant-address');
+  address.setAttribute('tabindex',0)
   address.innerHTML = restaurant.address;
 
   const image = document.getElementById('restaurant-img');
   image.className = 'restaurant-img'
+  image.setAttribute('tabindex',0)
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
-  image.alt = "Image of " + restaurant.name + "restaurant";
+  image.alt = "Image of " + restaurant.name + " restaurant";
+
 
   const cuisine = document.getElementById('restaurant-cuisine');
+  cuisine.setAttribute('tabindex',0)
   cuisine.innerHTML = restaurant.cuisine_type;
 
   // fill operating hours
@@ -92,8 +97,12 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
  */
 fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => {
   const hours = document.getElementById('restaurant-hours');
+  hours.setAttribute('tabindex',0);
+  hours.setAttribute('aria-label','serving hours')
+
   for (let key in operatingHours) {
     const row = document.createElement('tr');
+	row.setAttribute('tabindex',0);
 
     const day = document.createElement('td');
     day.innerHTML = key;
@@ -112,6 +121,8 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
  */
 fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById('reviews-container');
+    container.setAttribute('tabindex',0)
+  container.setAttribute('aria-label','reviews-container')
   const title = document.createElement('h2');
   title.innerHTML = 'Reviews';
   container.appendChild(title);
@@ -134,6 +145,8 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
  */
 createReviewHTML = (review) => {
   const li = document.createElement('li');
+  li.setAttribute('tabindex',0)
+
   const name = document.createElement('p');
   name.classList.add('name')
   name.innerHTML = review.name;
@@ -157,12 +170,18 @@ createReviewHTML = (review) => {
   return li;
 }
 
+/* footer role  */
+  const footer = document.getElementById('footer');
+footer.setAttribute('tabindex',0)
+footer.setAttribute('aria-label','copyrights of RESTAURANT REVIEWS')
+
 /**
  * Add restaurant name to the breadcrumb navigation menu
  */
 fillBreadcrumb = (restaurant=self.restaurant) => {
   const breadcrumb = document.getElementById('breadcrumb');
   const li = document.createElement('li');
+  li.setAttribute('tabindex',0)
   li.innerHTML = restaurant.name;
   breadcrumb.appendChild(li);
 }

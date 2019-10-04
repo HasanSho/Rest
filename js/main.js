@@ -152,7 +152,8 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
 	
   const image = document.createElement('img');
   image.className = 'restaurant-img';
-  image.alt = "Image of " + restaurant.name + "restaurant";
+  image.setAttribute('tabindex',0)
+  image.alt = "Image of " + restaurant.name + " restaurant";
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   li.append(image);
 	
@@ -176,6 +177,17 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
   return li
 }
 
+/* footer aria-label  */
+  const footer = document.getElementById('footer');
+footer.setAttribute('tabindex',0)
+footer.setAttribute('aria-label','copyrights of RESTAURANT REVIEWS')
+
+
+/*map-container aria-label */
+const mapContainer = document.getElementById('map-container');
+mapContainer.setAttribute('tabindex',0)
+mapContainer.setAttribute('aria-label','Map of nearby restaurants')
+
 /**
  * Add markers for current restaurants to the map.
  */
@@ -194,9 +206,13 @@ addMarkersToMap = (restaurants = self.restaurants) => {
 
 } 
 
+
+// loading the service worker
 (function(){
+	//checking whether the used navigator supports the serviceWorker, if not.. return
 	  if (!navigator.serviceWorker) return;
 
+// loading the serviceWorker script file
   navigator.serviceWorker.register('./sw.js')
   .then(function() {
     console.log('Registration worked!');
