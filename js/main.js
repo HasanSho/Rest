@@ -12,8 +12,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // loading the service worker
 
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker
-      .register('./sw.js')
+    navigator.serviceWorker.register('./sw.js')
       .then( (registration) => {
         // Registration was successful
         console.log('ServiceWorker registered, scope: ', registration.scope);
