@@ -4,9 +4,11 @@
 For the **Restaurant Reviews** projects, I have converted a static webpage to a mobile-ready web application. In **Stage One**, I took static design that lacks accessibility and converted  it to be responsive on different sized displays and accessible for screen reader use. I have also added a service worker to begin the process of creating a seamless offline experience for users.
 
 ### Project Starter Code
-You can find the project starter code from [here](https://review.udacity.com/#!/rubrics/1090/view)
+You can find the project starter code from [here](https://github.com/udacity/mws-restaurant-stage-1)
 
+## Live Project
 
+You can find live project and test it from this [LINK](https://hasansho.github.io/restaurant-review-app2/)
 ### Goals
  Our goal to make the website application:
  
