@@ -9,9 +9,13 @@ class DBHelper {
    */
   static get DATABASE_URL() {
     const port = 8000 // Change this to your server port
-    //return `http://localhost:${port}/data/restaurants.json`;
-    return './data/restaurants.json';
+
+    if(location.hostname === "hasansho.github.io"){
+    	return `https://hasansho.github.io/restaurant-review-app2/data/restaurants.json`
+    }
+    return `http://localhost:${port}/data/restaurants.json`;
   }
+    
 
   /**
    * Fetch all restaurants.
@@ -151,7 +155,10 @@ class DBHelper {
    * Restaurant image URL.
    */
   static imageUrlForRestaurant(restaurant) {
-    return (`./img/${restaurant.photograph}`);
+    if(location.hostname === "hasansho.github.io"){
+      return (`./img/${restaurant.photograph}`);
+    }
+    else return (`/img/${restaurant.photograph}`)
   }
 
   /**
@@ -182,4 +189,8 @@ class DBHelper {
   } 
 */
 }
+
+
+
+
 
