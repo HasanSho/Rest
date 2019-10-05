@@ -13,13 +13,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js')
-      .then( (registration) => {
-        // Registration was successful
-        console.log('ServiceWorker registered, scope: ', registration.scope);
+      .then((registration) => {
+        // ServiceWorker registered successfully
+        console.log('ServiceWorker registered successfully.');
       })
-      .catch( (error) => {
-        // registration failed
-        console.log('ServiceWorker registration failed: ', error);
+      .catch((error) => {
+        // ServiceWorker failed to register
+        console.log('ServiceWorker failed to register: ', error);
       });
 
   }
