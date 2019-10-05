@@ -11,6 +11,7 @@ self.addEventListener('install',function(event){
 	.then(function(cache){
 		
 		return cache.addAll([
+				'/',
 				'index.html',
 				'restaurant.html',
 				'css/styles.css',
@@ -69,7 +70,7 @@ self.addEventListener('fetch', function(event) {
 		.then(function(response) {
 			return response || fetch(event.request); // if reqeust not available fetch it
 		})
-		.catch(function() {
+		.catch(function(response) {
       // Offline? No cache?  responde with a message
       return new Response("<div  style='text-align: center;' > <img src='img/No_Network.png' width='100' height='100' alt='Connection Lost'></div><h1>No Internet connection, and no old cashed page for this URL.</h1><p>Please check your Internet Connection!</p>"
 	  ,{
